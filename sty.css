@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    overflow: none;
+}
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.438)), url(cult.img/discover.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+display: inline-flex;
+}
+header {
+    background-color: #000033;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 3px solid #e8491d;
+  }
+  
+  header .contain {
+    display: flex; /* Use Flexbox for alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Space logo and nav evenly */
+  }
+  
+  header .logo {
+    float: left; /* Still use float for older browser support */
+    font-weight: bold;
+    font-size: 1.5rem; /* Larger logo text */
+    color: #fff;
+    text-decoration: none;
+  
+  }
+  header .logo img {
+    max-width: 150px;
+    height: auto;
+    vertical-align: middle; /* Align image with text */
+  }
+ 
+  
+  .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1em;
+  }
+  
+  
+  
+  nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+     
+  }
+  
+  nav ul li {
+      margin-left: 1em;
+  }
+  
+  nav ul li a {
+      color: #fff;
+      padding: 0.5em 0.75em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease; /* Smooth transition */
+      position: relative;
+    }
+    nav ul li a::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      left: 0;
+      bottom: -6px;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .5s;
+  }
+  nav ul li a:hover::after{
+      transform: scaleX(1);
+      transform-origin: left;
+  }
+  nav ul li a:hover {
+      background-color: #555;
+  }
+.rate{
+    justify-content: left;
+    text-align: center; 
+    margin-top: 100px;
+    color: white;
+    font-weight: 900px;
+    font-size: 50px;
+}
+.rate a button{
+    
+    
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+.rate a button:hover{
+    background-color: green;
+
+}
+.Ghana img{
+    margin-top: 5px;
+    /* width: 500px;
+    height: 600px; */
+}
+/* =========================
+   Mobile Menu Toggle
+   ========================= */
+   .nav-toggle {
+    display: none; /* Hidden by default */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    padding: 0;
+    margin-top: 10px; /* Align vertically with logo on desktop */
+}
+
+.nav-toggle:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.hamburger {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Style the icon when menu is open */
+.nav-toggle.open .hamburger {
+    background-color: transparent; /* Hide the middle line */
+}
+
+.nav-toggle.open .hamburger::before {
+    transform: translateY(8px) rotate(45deg); /* Rotate top line */
+}
+
+.nav-toggle.open .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg); /* Rotate bottom line */
+}
+
+/* =========================
+   Mobile Navigation Styles (Hidden by Default)
+   ========================= */
+.nav.nav--visible { /* The menu is visible with Javascript */
+    display: block;
+    position: absolute;
+    top: 100%; /* Below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.95); /* Dark with transparency */
+    z-index: 10; /* Ensure it's above content */
+    padding: 1rem 0; /* Add some padding */
+}
+
+.nav.nav--visible ul {
+    display: block; /* Stack items vertically */
+    text-align: center;
+    padding: 0;
+}
+
+.nav.nav--visible li {
+    padding: 0.75rem 0;
+}
+
+.nav.nav--visible a{
+    font-size: 1.1rem;
+    display: block; /* Make links fill the container for easier tapping */
+    padding: 0.5rem; /* Add padding around the links */
+}
+
+/* =========================
+   Hero Section Styles
+   ========================= */
+#hero {
+    background-color: #eee;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* =========================
+   Responsive Design (Media Queries)
+   ========================= */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    /* Mobile View: Adjust Header Layout */
+    header .container {
+        flex-direction: column; /* Stack logo and nav */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    header .logo {
+        float: none; /* Remove float */
+        text-align: left; /* Align to the left */
+    }
+
+    /* Mobile View: Hide Desktop Navigation */
+    .nav {
+        display: none;
+        float: none; /* Remove float */
+        width: 100%; /* Take full width */
+    }
+
+    /* Mobile View: Show Mobile Menu Toggle */
+    .nav-toggle {
+        display: block;
+    }
+
+    /*Style Nav link item*/
+    li {
+      border-bottom: 1px solid gray;
+    }
+
+    .nav.nav--visible li:last-child {
+        border-bottom: none;
+    }
+
+    /* Mobile View: Position Header and Navigation */
+    header {
+      position: relative;
+    }
+
+}
+
+@media screen and (max-width: 786px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5em;
+        margin-top: 1.5em;
+    }
+}
+@media (max-width: 786px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 0.5em;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+@media screen and(max-width:400px) {
+    body{
+        display:grid;
+     grid-template-areas: 'header'
+     'nav' 
+     'section'
+     'footer'
+     ;
+     
+    }
+    header{
+        grid-area: header;
+        width: 50%;
+    }
+    nav{
+        grid-area: nav;
+        width: 50%;
+    }
+    section{
+        grid-area: section;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+    }
+}
