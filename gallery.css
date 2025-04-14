@@ -331,7 +331,14 @@ box-shadow: 0 0 30px #000033;
      
       padding: 0 20px;
   }
-  
+   @media (max-width: 768px){
+    .come{
+      display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5em;
+        margin-top: 1.5em;
+    }
+  }
 
 /* Footer Styles */
 footer {
